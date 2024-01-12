@@ -1,0 +1,12 @@
+[submodule "gkgammatst"]
+	path = gkgammatst
+	url = https://github.com/jCalderTravis/gkgammatst.git
+[submodule "DDM-conf-tools"]
+	path = DDM-conf-tools
+	url = https://github.com/jCalderTravis/DDM-conf-tools.git
+[submodule "mat-comp-model-tools"]
+	path = mat-comp-model-tools
+	url = https://github.com/jCalderTravis/mat-comp-model-tools.git
+[submodule "sim-decis-conf"]
+	path = sim-decis-conf
+	url = https://github.com/jCalderTravis/sim-decis-conf.git
