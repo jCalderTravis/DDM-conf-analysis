@@ -1,0 +1,6 @@
+/ModelRecoveryTests/*
+/scheduledJobs/*
+/logs/*
+/Scratch/*
+/PlotsAndResults/*
+/confDataAndFitDir.mat
