@@ -10,7 +10,7 @@ Some parts of the code need the [VBL toolbox](https://mbb-team.github.io/VBA-too
 To run the plotting functions it is necessary to download the data and model fit results from TODO.
 The parent directory to which you download these data and model fits needs to be specified, so that the code can load the appropriate files as needed. To do this, a matfile named '''confDataAndFitDir.mat''' should be saved in the main folder of the code respository. This matfile should contain a single variable `dataDir`, which contains the full file path of the parent folder on your system.
 
-Each session before using the code all the subfolders in the respository should be added to the matlab path.
+Each session before using the code all the folders and subfolders in the respository should be added to the matlab path.
 
 ## Running the analyses
 To make the plots, call the function ...
