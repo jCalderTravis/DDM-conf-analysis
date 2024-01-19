@@ -5,11 +5,9 @@ This repository contains the code for performing the analysis, computational mod
 Author (excluding submodules): [Joshua Calder-Travis](https://scholar.google.com/citations?user=-9asgxcAAAAJ&hl=en)
 
 ## Dependencies and setup
-Some parts of the code need the [VBL toolbox](https://mbb-team.github.io/VBA-toolbox/) to be installed in order to run.
+Some parts of the code need the [VBL toolbox](https://mbb-team.github.io/VBA-toolbox/) to be installed in order to run. Each session before using the code all the folders and subfolders in the respository should be added to the matlab path.
 
 To run the plotting functions it is necessary to download the data and model fit results from the [associated OSF project](https://doi.org/10.17605/OSF.IO/QPSEM). All data and fits are contained in subfolders of the folder "DataAndFits". The path of the "DataAndFits" folder on your local system needs to be specified, so that the code can load the appropriate files. To do this, a matfile named '''confDataAndFitDir.mat''' should be saved in the main folder of the code respository. This matfile should contain a single variable `dataDir`, which contains the full file path of the "DataAndFits" folder on your system.
-
-Each session before using the code all the folders and subfolders in the respository should be added to the matlab path.
 
 ## Running the analyses
 To make a wide range of plots of data and fits, including the plots in the paper, call `makePlotsForEmpiricalPaper()`. 
