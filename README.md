@@ -7,18 +7,14 @@ Author (excluding submodules): [Joshua Calder-Travis](https://scholar.google.com
 ## Dependencies and setup
 Some parts of the code need the [VBL toolbox](https://mbb-team.github.io/VBA-toolbox/) to be installed in order to run. The VBL Toolbox code is not included as part of this repository.
 
-To run the plotting functions it is necessary to download the data and model fit results from TODO.
-The parent directory to which you download these data and model fits needs to be specified, so that the code can load the appropriate files as needed. To do this, a matfile named '''confDataAndFitDir.mat''' should be saved in the main folder of the code respository. This matfile should contain a single variable `dataDir`, which contains the full file path of the parent folder on your system.
+To run the plotting functions it is necessary to download the data and model fit results from the [associated OSF project](https://doi.org/10.17605/OSF.IO/QPSEM). All data and fits are contained in subfolders of the folder "DataAndFits". The path of the "DataAndFits" folder on your local system needs to be specified, so that the code can load the appropriate files. To do this, a matfile named '''confDataAndFitDir.mat''' should be saved in the main folder of the code respository. This matfile should contain a single variable `dataDir`, which contains the full file path of the "DataAndFits" folder on your system.
 
 Each session before using the code all the folders and subfolders in the respository should be added to the matlab path.
 
 ## Running the analyses
-To make the plots, call the function ...
-By default plots will be saved in a subfolder of the main folder of the 
-respository `PlotsAndResults`.
+To make a wide range of plots of data and fits, including the plots in the paper, call `makePlotsForEmpiricalPaper()`. 
 
-To run the fitting again, the following fuctions may be used...
-It will be necessary to customise the function mT_runOneJob.sh to the specific cluster environment.
+To perform in the fitting again instead of using the fitting results supplied in the [associated OSF project](https://doi.org/10.17605/OSF.IO/QPSEM) the functions `runCrossValFits` and `fitModels` can be used with appropriate inputs to either run cross-validated model fitting, or fitting to all data without train-test splitting, respectively. See comments on those functions for more detail. The function `produceDefaultModelLists` provides a way of conveniently producing a list of the name-codes for the key models. Users wishing to run the fitting on a computer cluster will need to adapt the script `mT_runOneJob.sh` and `mT_submitAllJobs.sh` to their specific environment and cluster scheduling system. Results from a cluster can be collected and analysed using the `mT_analyseClusterResults` function.
 
 ## History 
 Reviewed all code Jan 2024. The code has been carefully checked. Nevertheless, no guarantee or warranty is provided for any part of the code.
