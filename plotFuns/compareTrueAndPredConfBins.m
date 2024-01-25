@@ -125,7 +125,6 @@ function Figures = createPlots(plotter, DSet1, plotType1, ...
 % OUTPUT
 % Figures: structs with the following fields...
 %   avFig: Figure handle to the plot for average over participants
-%   indFig: Figure handle to the plot for individual participants
 %   combFig: Figure handle to plot with average over participants alongside
 %       the data from some sample participants
 
@@ -151,6 +150,11 @@ for iPl = 1 : length(ptpntPlts)
     end
     close(ptpntPlts(iPl))
 end
+
+[Figures.avFig, ptpntPlts] = makeAllSeperatePlots(plotter, ...
+    DSet1, plotType1, ...
+    DSet2, plotType2, ...
+    false);
 
 end
 

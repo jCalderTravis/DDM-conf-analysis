@@ -96,12 +96,17 @@ for iFold = 1 : numFolds
             relTrials = baseInclusion(DSet.P(iP).Data) & ...
                 (DSet.P(iP).Data.CvFold == iFold);
 
-            trainTrials = ...
-                DSet.P(iP).Models(iModel).Settings.FindIncludedTrials( ...
-                    DSet.P(iP).Data);
-            assert(isequal(size(trainTrials), size(relTrials)))
-            if any(trainTrials & relTrials)
-                error('At least one trial used for both training and eval')
+            findInc = ...
+                DSet.P(iP).Models(iModel).Settings.FindIncludedTrials;
+            if isa(findInc, 'char') || isa(findInc, 'string')
+                % No longer have the information need to run this test
+            else
+                trainTrials = findInc(DSet.P(iP).Data);
+                assert(isequal(size(trainTrials), size(relTrials)))
+                if any(trainTrials & relTrials)
+                    error(['At least one trial used for both ' ...
+                        'training and eval'])
+                end
             end
 
             avLogPosteriorPredictive(iModel, iP, iFold) ...

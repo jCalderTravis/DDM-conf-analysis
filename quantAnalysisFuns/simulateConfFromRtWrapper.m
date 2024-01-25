@@ -23,7 +23,7 @@ PredDSet = DSet;
 
 for iP = 1 : length(DSet.P)
     
-    findIncludedTrials = DSet.P(iP).Models(modelNum).Settings.FindIncludedTrials;
+    findIncludedTrials = @(Data) ~isnan(Data.Conf);
     ParamStruct = DSet.P(iP).Models(modelNum).BestFit.Params;
     
     SimConf = simulateConfFromRt(modelUsed, findIncludedTrials, ParamStruct, ...

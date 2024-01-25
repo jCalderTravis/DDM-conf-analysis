@@ -18,7 +18,9 @@ else
 end
 
 for iP = 1 : length(DSet.P)
-    assert(all(ismember(DSet.P(iP).Data.ConfCat, assumedConfBins)))
+    nonNanConf = ~isnan(DSet.P(iP).Data.ConfCat);
+    assert(all(ismember(DSet.P(iP).Data.ConfCat(nonNanConf), ...
+        assumedConfBins)))
 end
 
 for i = 1 : 2

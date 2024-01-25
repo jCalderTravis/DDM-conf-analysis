@@ -191,7 +191,8 @@ for iPtpnt = 1 : length(Data)
         end
         
         % Find trials to be included in each analysis
-        incTrial = findIncludedTrials(Data(iPtpnt), iBlockType, verbose);
+        incTrial = findQualIncludedTrials(Data(iPtpnt), iBlockType, ...
+            verbose);
         
         Data(iPtpnt).CondPrep(iBlockType).IncTrials = incTrial;
     end

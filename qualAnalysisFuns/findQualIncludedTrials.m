@@ -1,4 +1,4 @@
-function incTrial = findIncludedTrials(Data, blockType, verbose)
+function incTrial = findQualIncludedTrials(Data, blockType, verbose)
 % Create an indicator variable tracking which trials should be included for
 % analysis.
 
